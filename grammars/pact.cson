@@ -1,0 +1,71 @@
+'scopeName': 'source.pact'
+'name': 'xPact'
+'fileTypes': [
+  'pact'
+  'xpact'
+]
+
+# See https://macromates.com/manual/en/language_grammars.html#naming_conventions
+'patterns': [
+  # Function commands
+  {
+    'match': '(?i:^[\\s\\t]*(print|break|sleep|at|sync|repeat|stop)[\\s\\t])'
+    'name': 'entity.name.function.pact'
+  }
+  # Contract commands
+  {
+    'match': '(>|<|>!|<!|>>|<<|>>!|<<!)[\\s\\t]*([\\w/]+)[\\s\\t]*([0-9a-fA-F]{2}\\s)?'
+    'captures':
+      '1':
+        'name': 'entity.name.tag.pact'
+      '2':
+        'name': 'constant.other.pact'
+      '3':
+        'name': 'entity.name.type.pact'
+  }
+
+  # Environment overrides and bytegen
+  {
+    'match': '(\\\[\\w+([\\s\\t]+\\w+)?\\\])'
+    'captures':
+      '1':
+        'name': 'support.constant.pact'
+  }
+  # Environment variables
+  {
+    'match': '^(\\w+)[\\s\\t]*='
+    'captures':
+      '1':
+        'name': 'variable.other.pact'
+  }
+
+  # String literals
+  {
+    'begin': '"'
+    'end': '"'
+    'name': 'string.quoted.double.pact'
+    'patterns': [
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escaped.pact'
+      }
+    ]
+  }
+  {
+    'begin': '\''
+    'end': '\''
+    'name': 'string.quoted.single.pact'
+    'patterns': [
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escaped.pact'
+      }
+    ]
+  }
+
+  # Comments
+  {
+    'match': '^\\s*#.*$'
+    'name': 'comment.block.pact'
+  }
+]

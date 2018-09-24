@@ -1,0 +1,17 @@
+{
+  "name": "language-xpact",
+  "version": "0.0.0",
+  "description": "xPact language support in Atom",
+  "license": "MIT",
+  "engines": {
+    "atom": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgleizes/language-xpact.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sgleizes/language-xpact/issues"
+  },
+  "dependencies": {}
+}
