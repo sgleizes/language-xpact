@@ -25,17 +25,23 @@
       '4':
         'name': 'entity.name.type.pact'
   }
-
-  # Environment overrides and bytegen
+  # Packet bytegen
   {
-    'match': '(\\\[\\w+([\\s\\t]+\\w+)?\\\])'
+    'match': '([0-9a-fA-F.]{2}\\\[[0-9]+\\\])'
     'captures':
       '1':
         'name': 'support.constant.pact'
   }
-  # Environment variables
+
+  # Variable assignment and override
   {
     'match': '^(\\w+)[\\s\\t]*='
+    'captures':
+      '1':
+        'name': 'variable.other.pact'
+  }
+  {
+    'match': '(\\\[\\w+([\\s\\t]+\\w+)\\\])'
     'captures':
       '1':
         'name': 'variable.other.pact'
