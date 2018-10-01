@@ -14,13 +14,15 @@
   }
   # Contract commands
   {
-    'match': '(>|<|>!|<!|>>|<<|>>!|<<!)[\\s\\t]*([\\w/]+)[\\s\\t]*([0-9a-fA-F]{2}\\s)?'
+    'match': '(>|<|>!|<!|>>|<<|>>!|<<!)[\\s\\t]*([\\w/]+)[\\s\\t]*([0-9a-fA-F]{2}\\s)?([0-9a-fA-F]{2}\\s)?'
     'captures':
       '1':
         'name': 'entity.name.tag.pact'
       '2':
         'name': 'constant.other.pact'
       '3':
+        'name': 'entity.name.tag.pact'
+      '4':
         'name': 'entity.name.type.pact'
   }
 
