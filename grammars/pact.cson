@@ -65,7 +65,12 @@
 
   # Comments
   {
-    'match': '^\\s*#.*$'
+    'begin': '(?=/\\*)'
+    'end': '(?<!/)\\*/'
     'name': 'comment.block.pact'
+  }
+  {
+    'match': '\\s*#.*$'
+    'name': 'comment.line.number-sign.pact'
   }
 ]
