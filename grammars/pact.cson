@@ -9,7 +9,7 @@
 'patterns': [
   # Function commands
   {
-    'match': '(?i:^[\\s\\t]*(print|break|sleep|at|sync|repeat|stop)[\\s\\t])'
+    'match': '(?i:^[\\s\\t]*(exec|print|break|sleep|at|sync|repeat|stop)[\\s\\t])'
     'name': 'entity.name.function.pact'
   }
   # Contract commands
